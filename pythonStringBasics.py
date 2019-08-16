@@ -20,3 +20,23 @@ print("swapspace1:",swapspace1.swapcase())
 
 #The zfill() method adds zeros(0) at the beginning of the string. The length of the returned string depends on the width provided.
 print("zfill(), padding zeros", '12345'.zfill(10))
+
+
+allGuests = {'Alice': {'apples': 5, 'pretzels': 12},
+             'Bob': {'ham sandwiches': 3, 'apples': 2},
+             'Carol': {'cups': 3, 'apple pies': 1}}
+
+#Nested Dictionaires
+def totalBrought(guests, item):
+    numBrought = 0
+    for k,v in guests.items():
+        numBrought = numBrought + v.get(item, 0)
+    
+    return numBrought
+
+print('Number of things being brought:')
+print(' - Apples         ' + str(totalBrought(allGuests, 'apples')))
+print(' - Cups           ' + str(totalBrought(allGuests, 'cups')))
+print(' - Cakes          ' + str(totalBrought(allGuests, 'cakes')))
+print(' - Ham Sandwiches ' + str(totalBrought(allGuests, 'ham sandwiches')))
+print(' - Apple Pies     ' + str(totalBrought(allGuests, 'apple pies')))
